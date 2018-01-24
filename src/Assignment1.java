@@ -44,57 +44,11 @@ public class Assignment1 {
      * @throws IOException 
      */
     public void naiveSearchEq(int columnNumber, String value) throws IOException {
-    	int c;
-    	int column = 0; 
-    	String currentLine = "";
-    	FileReader inputStream = null;
-    	try {
-			inputStream = new FileReader(loadedFileName);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-    	
-    	while ((c = inputStream.read()) != -1) { // reads till the end of the file
-        	char ch = (char)c;
-        	
-        	if(ch != '\n') { //does not add new line into the array holding the current line
-    		currentLine += ch; //adds character by character to the current String[] till the next line
-        	}
-        	
-            if (ch == '|') { //counts how many columns we've been through to find the next line
-        		column++;
-            }
-            
-    		if (column == 9) { // marks the end of each line
-    			String[] check = currentLine.split(SEPARATOR); // splits each column into the array
-    			if (check[columnNumber-1].contentEquals(value)) { //compares the value of the column to the given value
-    				System.out.println(currentLine);
-    			}
-    			column = 0; //resets the counter
-    			currentLine = ""; //resets the current line
-    		}  	
-    	}		
-        System.out.println("naiveSearchEq col #" + columnNumber + "=" + value);
-        inputStream.close();
+// code to be added when due date is over
     }
     
     public void naiveBufSearchEq(int columnNumber, String value) throws IOException {
-    	String currentLine; 
-    	BufferedReader inputStream = null; 
-    	try {
-			inputStream = new BufferedReader(new FileReader(loadedFileName)); //initializing bufferedReader
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-    	
-    	while ((currentLine = inputStream.readLine()) != null) { // reads till the end of the file line by line
-    		String[] check = currentLine.split(SEPARATOR); // splits each column into the array
-    		if (check[columnNumber-1].contentEquals(value)) { //compares the value of the column to the given value
-    			System.out.println(currentLine);
-    		}  	
-    	}		     
-    	System.out.println("naiveBufSearchEq col #" + columnNumber + "=" + value);
-    	inputStream.close();
+//code to be added when due date is over
     }
 
 
@@ -108,56 +62,9 @@ public class Assignment1 {
      * @throws NumberFormatException 
      */
     public void naiveSearchGtr(int columnNumber, float value) throws NumberFormatException, IOException {
-    	int c;
-    	int column = 0; 
-    	String currentLine = "";
-    	FileReader inputStream = null;
-    	try {
-			inputStream = new FileReader(loadedFileName);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-    	
-    	while ((c = inputStream.read()) != -1) {
-        	char ch = (char)c;
-        	
-        	if(ch != '\n') {
-    		currentLine += ch;
-        	}
-        	
-            if (ch == '|') {
-        		column++;
-            }
-            
-    		if (column == 9) {
-    			String[] check = currentLine.split(SEPARATOR);
-    			if (Float.parseFloat(check[columnNumber-1]) > (value)) {
-    				System.out.println(currentLine);
-    			}
-    			column = 0;
-    			currentLine = "";
-    		}  	
-    	}   
-        System.out.println("naiveSearchGtr col #" + columnNumber + ">" + value);
-        inputStream.close();
+//code to be added when due date is over
     }
 
 	public void naiveBufSearchGtr(int columnNumber, float value) throws NumberFormatException, IOException {
-    	String currentLine;
-    	BufferedReader inputStream = null;
-    	try {
-			inputStream = new BufferedReader(new FileReader(loadedFileName));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-    	
-    	while ((currentLine = inputStream.readLine()) != null) { // reads till the end of the file
-    		String[] check = currentLine.split(SEPARATOR);
-    		if (Float.parseFloat(check[columnNumber-1]) > value) {
-    			System.out.println(currentLine);
-    		}  	
-    	}		     
-    	System.out.println("naiveBufSearchGtr col #" + columnNumber + "=" + value);
-    	inputStream.close();
-    }
+//code to be added when due date is over
 }
